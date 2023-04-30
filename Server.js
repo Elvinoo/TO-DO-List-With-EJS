@@ -40,8 +40,11 @@ connectDB().then(() => {
 const itemsSchema = new mongoose.Schema({
   name: String,
 });
+app.get("/", (req, res) => {
+  res.json({ message: "fuck You" });
+});
 
-app.get("/", async (req, res) => {
+/* app.get("/", async (req, res) => {
   try {
     const items = await Item.find({});
     const today = new Date();
@@ -56,7 +59,7 @@ app.get("/", async (req, res) => {
   } catch (err) {
     res.status(500).send({ message: err.message });
   }
-});
+}); */
 
 app.post("/", async (req, res) => {
   try {
