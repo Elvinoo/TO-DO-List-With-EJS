@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../styles/styles.css">
-</head>
+    <link rel="stylesheet" href="../styles/styles.css" />
+  </head>
 
-<body>
+  <body>
     <div class="box" id="heading">
-        <h1>
-            <%= kindOfDay %>
-        </h1>
+      <h1><%= kindOfDay %></h1>
     </div>
     <div class="box">
+      <% newListItem.forEach(item=>{ %>
+      <div class="item">
+        <div class="item-input">
+          <input type="checkbox" />
+          <p><%=item.name %></p>
+        </div>
+        <form action="/delete" method="POST">
+          <input type="hidden" name="itemId" value="<%= item._id %>" />
+          <button type="submit" class="delete">X</button>
+        </form>
+      </div>
+      <% }) %>
 
-
-        <% newListItem.forEach(item=>{ %>
-            <div class="item">
-                <input type="checkbox">
-                <p>
-                    <%=item%>
-                </p>
-            </div>
-            <% }) %>
-
-                <form class="item" action="/" method="post">
-                    <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
-                    <button type="submit" name="button">+</button>
-                </form>
+      <form class="item" action="/" method="post">
+        <input
+          type="text"
+          name="name"
+          placeholder="New Item"
+          autocomplete="off"
+        />
+        <button class="add-button" type="submit" name="button">+</button>
+      </form>
     </div>
 
-
-
-    <footer>
-        © E.A
-    </footer>
-</body>
-
+    <footer>© E.A <%= year %></footer>
+  </body>
 </html>

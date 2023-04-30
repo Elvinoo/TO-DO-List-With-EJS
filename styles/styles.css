@@ -1,8 +1,8 @@
 html {
-  background-color: #E4E9FD;
-  background-image: -webkit-linear-gradient(65deg, #d5b57e 50%, #646771 50%);
+  background-color: #e4e9fd;
+  background-image: -webkit-linear-gradient(65deg, #f6ba6f 50%, #ade4db 50%);
   min-height: 1000px;
-  font-family: 'helvetica neue';
+  font-family: "helvetica neue";
 }
 
 h1 {
@@ -18,7 +18,7 @@ h1 {
 }
 
 #heading {
-  background-color: #d5b57e;
+  background-color: #f6ba6f;
   text-align: center;
 }
 
@@ -26,21 +26,22 @@ h1 {
   min-height: 70px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #F1F1F1;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f1f1;
 }
 
 .item:last-child {
   border-bottom: 0;
 }
 
-input:checked+p {
+input:checked + p {
   text-decoration: line-through;
-  text-decoration-color: #d5b57e;
+  text-decoration-color: #f6ba6f;
 }
 
 input[type="checkbox"] {
   margin: 20px;
-  accent-color: #d5b57e;
+  accent-color: #f6ba6f;
 }
 
 p {
@@ -56,7 +57,8 @@ form {
   margin-left: 20px;
 }
 
-button {
+.add-button {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,10 +66,11 @@ button {
   width: 50px;
   border-radius: 50%;
   border-color: transparent;
-  background-color: #d5b57e;
+  background-color: #f6ba6f;
   color: black;
   font-size: 30px;
   border-width: 0;
+  margin-right: 10px;
 }
 
 input[type="text"] {
@@ -83,7 +86,7 @@ input[type="text"] {
 
 input[type="text"]:focus {
   outline: none;
-  box-shadow: inset 0 -3px 0 0 #d5b57e;
+  box-shadow: inset 0 -3px 0 0 #f6ba6f;
 }
 
 ::placeholder {
@@ -95,4 +98,17 @@ footer {
   text-align: center;
   margin-top: 300px;
   font-weight: 600;
+}
+.item-input {
+  display: flex;
+}
+.delete {
+  background-color: #ade4db;
+  color: black;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  margin-right: 20px;
+  cursor: pointer;
 }
