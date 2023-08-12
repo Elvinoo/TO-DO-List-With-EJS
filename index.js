@@ -8,6 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const ejs = require("ejs");
 app.set("view engine", "ejs");
+app.set('views', './views');
 app.use("/styles", express.static("styles"));
 
 const PORT = process.env.PORT || 8000;
